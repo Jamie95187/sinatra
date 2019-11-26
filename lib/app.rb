@@ -12,6 +12,13 @@ get '/manual' do
   "Hey There Manual"
 end
 
-get '/cat' do
+get '/random-cat' do
+  @names = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @names = params[:names]
   erb(:index)
 end
